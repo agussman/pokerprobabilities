@@ -11,10 +11,10 @@ logger = logging.getLogger()
 
 @ask.launch
 def launch():
-    return poker1()
+    return poker()
 
 @ask.intent("PokerIntent")
-def poker1():
+def poker():
     speech = "The winning probability of your cards is 99%"
 
     return statement(speech)
