@@ -13,7 +13,7 @@ logger = logging.getLogger()
 def launch():
     return poker1()
 
-@ask.intent("Poker1Intent")
+@ask.intent("PokerIntent")
 def poker1():
     speech = "The winning probability of your cards is 99%"
 
