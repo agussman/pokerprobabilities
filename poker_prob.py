@@ -21,6 +21,13 @@ def hello_world():
     speech_text = 'Welcome to poker probabilities.'
     return statement(speech_text).simple_card('PokerProbabilities', speech_text)
 
+@ask.intent('PokerIntent')
+def poker(CardA, CardB):
+    speech_text = 'The probability is 99'
+    return statement(speech_text).simple_card('PokerProbabilities', speech_text)
+
+
+
 
 @ask.intent('AMAZON.HelpIntent')
 def help():

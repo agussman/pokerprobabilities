@@ -1,1 +1,3 @@
-PokerIntent What is the poker probability
+PokerIntent What is the probability for {CardA} and {CardB}
+PokerIntent What is win probability for {CardA} and {CardB}
+PokerIntent What's the win probability for {CardA} and {CardB}

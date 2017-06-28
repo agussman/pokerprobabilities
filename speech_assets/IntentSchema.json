@@ -1,7 +1,17 @@
 {
   "intents": [
     {
-      "intent": "PokerIntent"
+      "intent": "PokerIntent",
+      "slots": [
+        {
+          "name": "CardA",
+          "type": "LIST_OF_CARDS"
+        },
+        {
+          "name": "CardB",
+          "type": "LIST_OF_CARDS"
+        }
+      ]
     },
     {
       "intent": "AMAZON.HelpIntent"
