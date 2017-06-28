@@ -2,12 +2,13 @@ import logging
 import os
 
 from flask import Flask
+from flask_ask import Ask, request, session, question, statement
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return "Hello, world 5!", 200
+    return "Hello, world 7!", 200
 
 if __name__ == '__main__':
     if 'ASK_VERIFY_REQUESTS' in os.environ:
