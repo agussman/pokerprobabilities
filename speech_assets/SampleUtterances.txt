@@ -29,3 +29,36 @@ PokerSuitedIntent What is the probability for {CardA} {CardB} suited
 PokerSuitedIntent What is win probability for {CardA} {CardB} suited
 PokerSuitedIntent What is the win probability for {CardA} {CardB} suited
 PokerSuitedIntent What's the win probability for {CardA} {CardB} suited
+
+
+PokerIntent What is the percentage for {CardA} and {CardB}
+PokerIntent What is win percentage for {CardA} and {CardB}
+PokerIntent What is the win percentage for {CardA} and {CardB}
+PokerIntent What's the win percentage for {CardA} and {CardB}
+
+PokerIntent What is the percentage for {CardA} {CardB}
+PokerIntent What is win percentage for {CardA} {CardB}
+PokerIntent What is the win percentage for {CardA} {CardB}
+PokerIntent What's the win percentage for {CardA} {CardB}
+
+PokerIntent What is the percentage for {CardA} and {CardB} offsuit
+PokerIntent What is win percentage for {CardA} and {CardB} offsuit
+PokerIntent What is the win percentage for {CardA} and {CardB} offsuit
+PokerIntent What's the win percentage for {CardA} and {CardB} offsuit
+
+PokerIntent What is the percentage for {CardA} {CardB} offsuit
+PokerIntent What is win percentage for {CardA} {CardB} offsuit
+PokerIntent What is the win percentage for {CardA} {CardB} offsuit
+PokerIntent What's the win percentage for {CardA} {CardB} offsuit
+
+
+
+PokerSuitedIntent What is the percentage for {CardA} and {CardB} suited
+PokerSuitedIntent What is win percentage for {CardA} and {CardB} suited
+PokerSuitedIntent What is the win percentage for {CardA} and {CardB} suited
+PokerSuitedIntent What's the win percentage for {CardA} and {CardB} suited
+
+PokerSuitedIntent What is the percentage for {CardA} {CardB} suited
+PokerSuitedIntent What is win percentage for {CardA} {CardB} suited
+PokerSuitedIntent What is the win percentage for {CardA} {CardB} suited
+PokerSuitedIntent What's the win percentage for {CardA} {CardB} suited
