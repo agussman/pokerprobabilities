@@ -189,14 +189,15 @@ card_abbrvs = {
     'queen': 'Q',
     'jack': 'J',
     'ten': 'T',
-    'nine': '9',
-    'eight': '8',
-    'seven': '7',
-    'six': '6',
-    'five': '5',
-    'four': '4',
-    'three': '3',
-    'two': '2'
+    # apparently numbers come in as numbers...
+    # 'nine': '9',
+    # 'eight': '8',
+    # 'seven': '7',
+    # 'six': '6',
+    # 'five': '5',
+    # 'four': '4',
+    # 'three': '3',
+    # 'two': '2'
 }
 
 
@@ -214,7 +215,45 @@ def hello_world():
 @ask.intent('PokerIntent')
 def poker(CardA, CardB):
     #speech_text = render_template('win_reposne', carda=CardA, cardb=CardB)
-    speech_text = "The win percentage with %s and %s is %s" % (CardA, CardB, probs['AA'])
+
+    return poker_prob(CardA, CardB)
+
+@ask.intent('PokerSuitedIntent')
+def poker(CardA, CardB):
+    #speech_text = render_template('win_reposne', carda=CardA, cardb=CardB)
+
+    return poker_prob(CardA, CardB, "s")
+
+
+
+def poker_prob(CardA, CardB, is_suited):
+    CardA = CardA.strip().lower()
+    CardB = CardB.strip().lower()
+
+    ca = ""
+    if (CardA) in card_abbrvs:
+        ca = card_abbrvs[CardA]
+    else:
+        speech_text = "I'm sorry, but I don't recognize the card '%s'" % CardA
+        return statement(speech_text).simple_card('PokerProbabilities', speech_text)
+
+    cb = ""
+    if (CardB) in card_abbrvs:
+        cb = card_abbrvs[CardB]
+    else:
+        speech_text = "I'm sorry, but I don't recognize the card '%s'" % CardB
+        return statement(speech_text).simple_card('PokerProbabilities', speech_text)
+
+
+    abbrv = ca+cb+is_suited
+    if not abbrv in probs:
+        abbrv = cb+ca+is_suited
+        if not abbrv in probs:
+            speech_text = "I'm sorry, an unexpected error occurred looking up %s (%s) and %s (%s)" % (CardA, ca, CardB, cb)
+            return statement(speech_text).simple_card('PokerProbabilities', speech_text)
+
+
+    speech_text = "The win percentage with %s and %s is %s" % (CardA, CardB, probs[abbrv])
     return statement(speech_text).simple_card('PokerProbabilities', speech_text)
 
 @ask.intent('AMAZON.HelpIntent')

@@ -1,3 +1,19 @@
 PokerIntent What is the probability for {CardA} and {CardB}
 PokerIntent What is win probability for {CardA} and {CardB}
+PokerIntent What is the win probability for {CardA} and {CardB}
 PokerIntent What's the win probability for {CardA} and {CardB}
+
+PokerIntent What is the probability for {CardA} {CardB}
+PokerIntent What is win probability for {CardA} {CardB}
+PokerIntent What is the win probability for {CardA} {CardB}
+PokerIntent What's the win probability for {CardA} {CardB}
+
+PokerSuitedIntent What is the probability for {CardA} and {CardB} suited
+PokerSuitedIntent What is win probability for {CardA} and {CardB} suited
+PokerSuitedIntent What is the win probability for {CardA} and {CardB} suited
+PokerSuitedIntent What's the win probability for {CardA} and {CardB} suited
+
+PokerSuitedIntent What is the probability for {CardA} {CardB} suited
+PokerSuitedIntent What is win probability for {CardA} {CardB} suited
+PokerSuitedIntent What is the win probability for {CardA} {CardB} suited
+PokerSuitedIntent What's the win probability for {CardA} {CardB} suited
