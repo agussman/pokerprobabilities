@@ -23,7 +23,8 @@ def hello_world():
 
 @ask.intent('PokerIntent')
 def poker(CardA, CardB):
-    speech_text = 'The probability is 99'
+    #speech_text = render_template('win_reposne', carda=CardA, cardb=CardB)
+    speech_text = "The win percentage with %s and %s is 99" % (CardA, CardB)
     return statement(speech_text).simple_card('PokerProbabilities', speech_text)
 
 
