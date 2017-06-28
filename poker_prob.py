@@ -1,3 +1,5 @@
+import logging
+import os
 
 from flask import Flask
 
@@ -5,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return "Hello, world 4!", 200
+    return "Hello, world 5!", 200
 
 if __name__ == '__main__':
     if 'ASK_VERIFY_REQUESTS' in os.environ:

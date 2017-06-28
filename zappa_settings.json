@@ -1,5 +1,7 @@
 {
     "dev": {
+        "debug": true,
+        "log_level": "DEBUG",
         "app_function": "poker_prob.app",
         "aws_region": "us-east-1", 
         "profile_name": "default", 
