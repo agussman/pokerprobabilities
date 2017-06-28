@@ -222,13 +222,13 @@ card_abbrvs = {
 @ask.launch
 def launch():
     speech_text = 'Welcome to Poker Probabilities. List two cards and I will provide your heads-up win percentage.'
-    return question(speech_text).reprompt(speech_text).simple_card('PokerProbabilities', speech_text)
+    return question(speech_text).reprompt(speech_text).simple_card('Poker Probabilities', speech_text)
 
 
 @ask.intent('HelloWorldIntent')
 def hello_world():
     speech_text = 'Welcome to poker probabilities.'
-    return statement(speech_text).simple_card('PokerProbabilities', speech_text)
+    return statement(speech_text).simple_card('Poker Probabilities', speech_text)
 
 @ask.intent('PokerIntent')
 def poker(CardA, CardB):
@@ -256,14 +256,14 @@ def poker_prob(CardA, CardB, is_suited):
         ca = card_abbrvs[CardA]
     else:
         speech_text = "I'm sorry, but I don't recognize the card '%s'" % CardA
-        return statement(speech_text).simple_card('PokerProbabilities', speech_text)
+        return statement(speech_text).simple_card('Poker Probabilities', speech_text)
 
     cb = ""
     if (CardB) in card_abbrvs:
         cb = card_abbrvs[CardB]
     else:
         speech_text = "I'm sorry, but I don't recognize the card '%s'" % CardB
-        return statement(speech_text).simple_card('PokerProbabilities', speech_text)
+        return statement(speech_text).simple_card('Poker Probabilities', speech_text)
 
 
     abbrv = ca+cb+is_suited
@@ -271,7 +271,7 @@ def poker_prob(CardA, CardB, is_suited):
         abbrv = cb+ca+is_suited
         if not abbrv in probs:
             speech_text = "I'm sorry, an unexpected error occurred looking up %s (%s) and %s (%s)" % (CardA, ca, CardB, cb)
-            return statement(speech_text).simple_card('PokerProbabilities', speech_text)
+            return statement(speech_text).simple_card('Poker Probabilities', speech_text)
 
     suit_status = "offsuit"
     if is_suited == "s":
@@ -279,12 +279,12 @@ def poker_prob(CardA, CardB, is_suited):
 
     #speech_text = render_template('win_reposne', carda=CardA, cardb=CardB)
     speech_text = "The win percentage with %s and %s %s is %s" % (CardA, CardB, suit_status, probs[abbrv])
-    return statement(speech_text).simple_card('PokerProbabilities', speech_text)
+    return statement(speech_text).simple_card('Poker Probabilities', speech_text)
 
 @ask.intent('AMAZON.HelpIntent')
 def help():
     speech_text = render_template('help')
-    return question(speech_text).reprompt(speech_text).simple_card('PokerProbabilities', speech_text)
+    return question(speech_text).reprompt(speech_text).simple_card('Poker Probabilities', speech_text)
 
 
 @ask.intent('AMAZON.StopIntent')
