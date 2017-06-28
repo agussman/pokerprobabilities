@@ -216,7 +216,7 @@ def hello_world():
 def poker(CardA, CardB):
     #speech_text = render_template('win_reposne', carda=CardA, cardb=CardB)
 
-    return poker_prob(CardA, CardB)
+    return poker_prob(CardA, CardB, "")
 
 @ask.intent('PokerSuitedIntent')
 def poker(CardA, CardB):
