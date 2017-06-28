@@ -238,7 +238,10 @@ def poker(CardA, CardB):
 
 @ask.intent('PokerSuitedIntent')
 def poker(CardA, CardB):
-    #speech_text = render_template('win_reposne', carda=CardA, cardb=CardB)
+
+    # Check for potential fail case of asking for suited for the same cards
+    if (CardA == CardB):
+        return poker_prob(CardA, CardB, "")
 
     return poker_prob(CardA, CardB, "s")
 
@@ -270,8 +273,12 @@ def poker_prob(CardA, CardB, is_suited):
             speech_text = "I'm sorry, an unexpected error occurred looking up %s (%s) and %s (%s)" % (CardA, ca, CardB, cb)
             return statement(speech_text).simple_card('PokerProbabilities', speech_text)
 
+    suit_status = "offsuit"
+    if is_suited == "s":
+        suit_status = "suited"
 
-    speech_text = "The win percentage with %s and %s is %s" % (CardA, CardB, probs[abbrv])
+    #speech_text = render_template('win_reposne', carda=CardA, cardb=CardB)
+    speech_text = "The win percentage with %s and %s %s is %s" % (CardA, CardB, suit_status, probs[abbrv])
     return statement(speech_text).simple_card('PokerProbabilities', speech_text)
 
 @ask.intent('AMAZON.HelpIntent')
